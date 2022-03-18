@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build current directory main.cpp",
+      "type": "shell",
+      "command": "g++ main.cpp -o output"
+    },
+    {
+      "label": "Run built executable",
+      "type": "shell",
+      "command": "./output"
+    }
+  ]
+}
