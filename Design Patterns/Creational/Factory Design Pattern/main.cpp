@@ -1,15 +1,11 @@
-#include "objects/EconomyPassenger.cpp"
-#include "objects/FirstClassPassenger.cpp"
-#include "PassengerFactory.cpp"
+#include "Passenger/PassengerFactory.cpp"
 
 int main(){
     srand(time(NULL));
-    char typeArray[4] = {'E','E','E','F'};
+    char typeArray[4] = {'E','E','F'};
     for(int i=0;i<10;i++){
         cout << "---------- >>> Passenger " << (i+1) << "----------" << endl;
-        Passenger *passenger = PassengerFactory::createPassenger(typeArray[rand()%4]);
+        Passenger *passenger = PassengerFactory::createPassenger(typeArray[rand()%3]);
         passenger->printSummary();
-        delete passenger;
     }
-
 }

@@ -1,5 +1,5 @@
-#include "objects/EconomyPassenger.cpp"
-#include "objects/FirstClassPassenger.cpp"
+#include "EconomyPassenger.cpp"
+#include "FirstClassPassenger.cpp"
 
 class PassengerFactory
 {
@@ -46,22 +46,23 @@ public:
             "Cassiel"
         };
         Passenger *passenger = NULL;
-        
+        short seatCount;
         switch (type){
             case 'E':{
-                cout << ">>> Creating Economy Passenger..." << endl;
                 passenger = new EconomyPassenger;
                 passenger->setTicketPrice(700 + rand()%300);
+                seatCount = 40;
             } break;
             case 'F':{
-                cout << ">>> Creating First Class Passenger..." << endl;
                 passenger = new FirstClassPassenger;
                 passenger->setTicketPrice(2700 + rand()%1300);
+                seatCount = 20;
             } break;
         }
-        passenger->setSeatNumber(string(1,type) + to_string(1 + rand()%60));
+        passenger->setSeatNumber(string(1,type) + to_string(1 + rand()%seatCount));
         passenger->setFullname(nameArray[rand()%14]+" "+surnameArray[rand()%14]);
-        passenger->setAge((10+ rand()%60));
+        passenger->setAge((10 + rand()%60));
+        passenger->setType(type);
         return passenger;
     }
 };
