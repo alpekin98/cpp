@@ -10,41 +10,6 @@ public:
     }
 
     static Passenger * createPassenger(char type){
-        string nameArray[] = {
-            "Trym"
-            "Brokkr",
-            "Sigmundr",
-            "Heimdallr",
-            "Jörmungandr",
-            "Gunnarr",
-            "Frigg",
-            "Hildr",
-            "Sigrun",
-            "Huld",
-            "Gudrun",
-            "Elli",
-            "Odin",
-            "Heidrun",
-            "Sif"
-        };
-
-        string surnameArray[] = {
-            "Brynhildr"
-            "Sigrún",
-            "Urd",
-            "Tyr",
-            "Grid",
-            "Sindri",
-            "Urd",
-            "Týr",
-            "Borghild",
-            "Svanhildr",
-            "Sanjaya",
-            "Astarte",
-            "Aristaios",
-            "Tadg",
-            "Cassiel"
-        };
         Passenger *passenger = NULL;
         short seatCount;
         switch (type){

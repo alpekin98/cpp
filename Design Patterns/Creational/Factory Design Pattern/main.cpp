@@ -1,4 +1,5 @@
 #include "Passenger/PassengerFactory.cpp"
+#include "Common.cpp"
 
 int main(){
     srand(time(NULL));
