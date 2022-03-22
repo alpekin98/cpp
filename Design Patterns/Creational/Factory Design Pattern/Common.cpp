@@ -46,4 +46,6 @@ extern string fromArray[] = {
     "Trabzon"
 };
 
+extern char passengerTypeArray[2] = {'E','F'};
+
 #endif

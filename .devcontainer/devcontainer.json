@@ -14,8 +14,4 @@
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
   "shutdownAction": "stopContainer"
-  // "dockerComposeFile": "docker-compose.yml",
-  // "service": "dev",
-  // "workspaceFolder": "/app",
-  // "shutdownAction": "stopCompose"
 }

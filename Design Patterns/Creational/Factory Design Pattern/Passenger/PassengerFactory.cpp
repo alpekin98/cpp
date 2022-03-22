@@ -1,5 +1,9 @@
+#ifndef PASSENGER_FACTORY_CPP
+#define PASSENGER_FACTORY_CPP
+
 #include "EconomyPassenger.cpp"
 #include "FirstClassPassenger.cpp"
+#include "../Common.cpp"
 
 class PassengerFactory
 {
@@ -25,10 +29,11 @@ public:
             } break;
         }
         passenger->setSeatNumber(string(1,type) + to_string(1 + rand()%seatCount));
-        passenger->setFullname(nameArray[rand()%14]+" "+surnameArray[rand()%14]);
+        passenger->setFullname(nameArray[rand()%sizeof(nameArray)]+" "+surnameArray[rand()%sizeof(surnameArray)]);
         passenger->setAge((10 + rand()%60));
         passenger->setType(type);
         return passenger;
     }
 };
 
+#endif 

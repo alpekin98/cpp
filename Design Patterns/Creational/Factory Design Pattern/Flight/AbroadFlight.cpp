@@ -3,35 +3,40 @@
 #include "Flight.cpp"
 #include "../Common.cpp"
 
-string destinationArray[] = {
+string abroadDestinationArray[] = {
     "Londra",
     "Berlin",
     "Tokyo",
     "Kyoto",
     "Toronto",
     "Washington DC",
+    "Roma",
+    "Barcelona",
+    "Brugge",
+    "Lizbon"
 };
 
-pair<string,string> brandMap[] = {
-    make_pair("Pegasus","PGS"),
+pair<string,string> abroadBrandMap[] = {
     make_pair("Turkish Airlines","THY"),
-    make_pair("AnadoluJet","ADJ"),
+    make_pair("Qatar Airways","QAW"),
+    make_pair("Lufthansa","LFT"),
 };
 
 class AbroadFlight : public Flight
 {
 public:
-    AbroadFlight(){
-        pair<string,string> brand = brandMap[rand()%sizeof(brandMap)];
+    Flight* prepareFlight(){
+        pair<string,string> brand = abroadBrandMap[rand()%sizeof(abroadBrandMap)];
         this->setBrand(brand.first);
         this->setFlightNumber(brand.second + to_string(1000+rand()%10000));
         this->setFrom(fromArray[rand()%sizeof(fromArray)]);
-        this->setDestination(destinationArray[rand()%sizeof(destinationArray)]);
+        this->setDestination(abroadDestinationArray[rand()%sizeof(abroadDestinationArray)]);
         this->setCapacity({
             {'E',10*rand()%10},
             {'F',10*rand()%5}
         });
         this->setType('A');
+        return this;
     }
 };
 
