@@ -38,4 +38,12 @@ extern string surnameArray[] = {
     "Cassiel"
 };
 
+extern string fromArray[] = {
+    "Ankara",
+    "İstanbul",
+    "İzmir",
+    "Bursa",
+    "Trabzon"
+};
+
 #endif

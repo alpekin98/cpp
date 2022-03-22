@@ -1,14 +1,38 @@
 #ifndef ABROADFLIGHT_CPP
 #define ABROADFLIGHT_CPP
 #include "Flight.cpp"
+#include "../Common.cpp"
+
+string destinationArray[] = {
+    "Londra",
+    "Berlin",
+    "Tokyo",
+    "Kyoto",
+    "Toronto",
+    "Washington DC",
+};
+
+pair<string,string> brandMap[] = {
+    make_pair("Pegasus","PGS"),
+    make_pair("Turkish Airlines","THY"),
+    make_pair("AnadoluJet","ADJ"),
+};
 
 class AbroadFlight : public Flight
 {
-private:
-    /* data */
 public:
-    AbroadFlight(/* args */);
-    ~AbroadFlight();
+    AbroadFlight(){
+        pair<string,string> brand = brandMap[rand()%sizeof(brandMap)];
+        this->setBrand(brand.first);
+        this->setFlightNumber(brand.second + to_string(1000+rand()%10000));
+        this->setFrom(fromArray[rand()%sizeof(fromArray)]);
+        this->setDestination(destinationArray[rand()%sizeof(destinationArray)]);
+        this->setCapacity({
+            {'E',10*rand()%10},
+            {'F',10*rand()%5}
+        });
+        this->setType('A');
+    }
 };
 
 #endif
