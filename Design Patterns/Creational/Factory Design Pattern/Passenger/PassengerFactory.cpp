@@ -29,7 +29,7 @@ public:
             } break;
         }
         passenger->setSeatNumber(string(1,type) + to_string(1 + rand()%seatCount));
-        passenger->setFullname(nameArray[rand()%sizeof(nameArray)]+" "+surnameArray[rand()%sizeof(surnameArray)]);
+        passenger->setFullname(nameArray[rand()%(sizeof(nameArray)/sizeof(*nameArray))]+" "+surnameArray[rand()%(sizeof(surnameArray)/sizeof(*surnameArray))]);
         passenger->setAge((10 + rand()%60));
         passenger->setType(type);
         return passenger;

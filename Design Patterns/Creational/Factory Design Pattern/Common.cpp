@@ -48,4 +48,6 @@ extern string fromArray[] = {
 
 extern char passengerTypeArray[2] = {'E','F'};
 
+extern char flightTypeArray[2] = {'A','D'};
+
 #endif

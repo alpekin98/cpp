@@ -2,14 +2,14 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Build current directory main.cpp",
+      "label": "Factory Design Pattern - Compile",
       "type": "shell",
-      "command": "g++ ${cwd}/main.cpp -o output"
+      "command": "cd 'Design Patterns/Creational/Factory Design Pattern'; make all;"
     },
     {
-      "label": "Run built executable",
+      "label": "Factory Design Pattern - Run",
       "type": "shell",
-      "command": "./output"
+      "command": "cd 'Design Patterns/Creational/Factory Design Pattern'; ./output;"
     }
   ]
 }

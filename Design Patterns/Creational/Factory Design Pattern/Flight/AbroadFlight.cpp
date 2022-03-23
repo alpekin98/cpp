@@ -26,14 +26,15 @@ class AbroadFlight : public Flight
 {
 public:
     Flight* prepareFlight(){
-        pair<string,string> brand = abroadBrandMap[rand()%sizeof(abroadBrandMap)];
+        srand(time(NULL));
+        pair<string,string> brand = abroadBrandMap[rand()%(sizeof(abroadBrandMap)/sizeof(*abroadBrandMap))];
         this->setBrand(brand.first);
         this->setFlightNumber(brand.second + to_string(1000+rand()%10000));
-        this->setFrom(fromArray[rand()%sizeof(fromArray)]);
-        this->setDestination(abroadDestinationArray[rand()%sizeof(abroadDestinationArray)]);
+        this->setFrom(fromArray[rand()%(sizeof(fromArray)/sizeof(*fromArray))]);
+        this->setDestination(abroadDestinationArray[rand()%(sizeof(abroadDestinationArray)/sizeof(*abroadDestinationArray))]);
         this->setCapacity({
-            {'E',10*rand()%10},
-            {'F',10*rand()%5}
+            {'E',(3*(1+rand()%10))},
+            {'F',(3*(1+rand()%5))}
         });
         this->setType('A');
         return this;

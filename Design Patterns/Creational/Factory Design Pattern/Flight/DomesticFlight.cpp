@@ -24,14 +24,15 @@ class DomesticFlight : public Flight
 {
 public:
     Flight* prepareFlight(){
-        pair<string,string> brand = domesticBrandMap[rand()%sizeof(domesticBrandMap)];
+        srand(time(NULL));
+        pair<string,string> brand = domesticBrandMap[rand()%(sizeof(domesticBrandMap)/sizeof(*domesticBrandMap))];
         this->setBrand(brand.first);
         this->setFlightNumber(brand.second + to_string(1000+rand()%10000));
-        this->setFrom(fromArray[rand()%sizeof(fromArray)]);
-        this->setDestination(domesticDestinationArray[rand()%sizeof(domesticDestinationArray)]);
+        this->setFrom(fromArray[rand()%(sizeof(fromArray)/sizeof(*fromArray))]);
+        this->setDestination(domesticDestinationArray[rand()%(sizeof(domesticDestinationArray)/sizeof(*domesticDestinationArray))]);
         this->setCapacity({
-            {'E',10*rand()%10},
-            {'F',10*rand()%5}
+            {'E',(3*(1+rand()%10))},
+            {'F',(3*(1+rand()%5))}
         });
         this->setType('D');
         return this;

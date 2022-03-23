@@ -11,13 +11,12 @@ class FlightFactory
 private:
     /* data */
 public:
-    FlightFactory(/* args */);
-    static Flight *  createFlight(char type){
+    static Flight * createFlight(char type){
         Flight *flight = NULL;
         if(type == 'D'){
             flight = new DomesticFlight;
             flight->prepareFlight();
-            for(short i=0;i<sizeof(passengerTypeArray);i++){
+            for(short i=0;i<(sizeof(passengerTypeArray)/sizeof(*passengerTypeArray));i++){
                 for(short j=0;j<flight->getCapacity(passengerTypeArray[i]);j++){
                     flight->addPassenger(PassengerFactory::createPassenger(passengerTypeArray[i]));
                 }
@@ -25,7 +24,7 @@ public:
         } else if (type == 'A'){
             flight = new AbroadFlight;
             flight->prepareFlight();
-            for(short i=0;i<sizeof(passengerTypeArray);i++){
+            for(short i=0;i<(sizeof(passengerTypeArray)/sizeof(*passengerTypeArray));i++){
                 for(short j=0;j<flight->getCapacity(passengerTypeArray[i]);j++){
                     flight->addPassenger(PassengerFactory::createPassenger(passengerTypeArray[i]));
                 }
